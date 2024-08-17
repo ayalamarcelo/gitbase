@@ -13,32 +13,38 @@ document.getElementById('cli-input').addEventListener('keydown', function(e) {
     }
 });
 
-// Maneja los comandos introducidos por el usuario.
+
 function handleCommand(input) {
     const outputDiv = document.getElementById('output');
+
+    // Dividir el input en partes, el primer elemento es el comando y el resto son argumentos
     const [command, ...args] = input.split(' ');
 
-    switch (command) {
+    // Reconstituir el comando base
+    const baseCommand = command + (args.length ? ' ' + args[0] : '');
+
+    // Comprobar el comando base
+    switch (baseCommand) {
         case 'git config':
-            handleConfigCommand(args);
+            handleConfigCommand(args.slice(1));
             break;
         case 'git init':
             handleInitCommand();
             break;
         case 'git clone':
-            handleCloneCommand(args);
+            handleCloneCommand(args.slice(1));
             break;
         case 'git status':
             handleStatusCommand();
             break;
         case 'git add':
-            handleAddCommand(args);
+            handleAddCommand(args.slice(1));
             break;
         case 'git rm':
-            handleRmCommand(args);
+            handleRmCommand(args.slice(1));
             break;
         case 'git commit':
-            handleCommitCommand(args);
+            handleCommitCommand(args.slice(1));
             break;
         case 'git commit --amend':
             handleCommitAmendCommand();
@@ -50,28 +56,28 @@ function handleCommand(input) {
             handleDiffCommand();
             break;
         case 'git checkout':
-            handleCheckoutCommand(args);
+            handleCheckoutCommand(args.slice(1));
             break;
         case 'git branch':
-            handleBranchCommand(args);
+            handleBranchCommand(args.slice(1));
             break;
         case 'git merge':
-            handleMergeCommand(args);
+            handleMergeCommand(args.slice(1));
             break;
         case 'git remote':
-            handleRemoteCommand(args);
+            handleRemoteCommand(args.slice(1));
             break;
         case 'git push':
-            handlePushCommand(args);
+            handlePushCommand(args.slice(1));
             break;
         case 'git pull':
-            handlePullCommand(args);
+            handlePullCommand(args.slice(1));
             break;
         case 'git rebase':
             handleRebaseCommand();
             break;
         case 'git cherry-pick':
-            handleCherryPickCommand(args);
+            handleCherryPickCommand(args.slice(1));
             break;
         case 'git stash':
             handleStashCommand();
@@ -94,6 +100,7 @@ function handleCommand(input) {
 
     outputDiv.scrollTop = outputDiv.scrollHeight;
 }
+
 
 // Configuración inicial de Git
 function handleConfigCommand(args) {
