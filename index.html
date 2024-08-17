@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Welcome!</title>
+</head>
+
+<body>
+    <div class="space">
+        <img src="./assets/mars.png" alt="mars" class="mars">
+        <img src="./assets/octonaut.svg" class="octonaut" alt="octonaut">
+        <img src="./assets/octonaut-orange.png" class="octonaut-orange" alt="octonaut-orange">
+        <img src="./assets/satellite.png" alt="satellite" class="satellite">   
+    </div>    
+    
+    <div class="window">
+        <div class="window-header">
+            <div class="buttons">
+                <div class="button close"></div>
+                <div class="button minimize"></div>
+                <div class="button maximize"></div>
+            </div>
+            <span class="window-title">GitBase</span>
+        </div>
+        <div class="terminal">
+            <div id="output"></div>
+            <div class="input-line">
+                <span id="prompt">> </span>
+                <input type="text" id="cli-input" autofocus>
+            </div>
+        </div>
+    </div>
+
+    <div class="galaxy-background"></div>
+
+    <script src="app.js"></script>
+    <script src="bg.js"></script>
+</body>
+
+</html>
