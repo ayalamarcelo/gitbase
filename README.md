@@ -2,6 +2,8 @@
 
 **Gitbase** is an interactive app that simulates a Git environment, designed for practicing and learning Git commands in a controlled and educational setting. Ideal for those who want to become familiar with Git or reinforce their version control skills.
 
+![Sample Image](./assets/sample-img)
+
 ## Features
 
 - **Realistic Git Simulation:** Reproduces Git's main functionalities, including commits, branch creation and management, and more.
